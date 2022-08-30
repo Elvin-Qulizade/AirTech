@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">LOGO</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-ham" href="#!"><span id="ss"></span></a>        
+        </div>
+        <ul>
+          <li>
+            <a href="#about">Haqqımızda</a>
+          </li>
+          <li>
+            <a href="#staff">Əməkdaşlarımız</a>
+          </li>
+          <li>
+            <a href="#partner">Tərəfdaşlarımız</a>
+          </li>
+          <li>
+            <a href="#!">Xidmətlərimiz</a>
+            <ul>
+              <li>
+                <a href="#!">Veb Dizayn</a>
+              </li>
+              <li>
+                <a href="#!">İnternet şəbəkələrinin quraşdırılması</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contact">Əlaqə</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <script>// After the DOM is loaded
+    window.addEventListener("load", function(e) {
+    
+      // Hamburger or X
+      let navham = document.getElementById('nav-ham');
+      // 1st level (only one)
+      let navul = document.querySelector('nav > ul');
+      // 2nd level (many)
+      let navulliuls = document.querySelectorAll('nav > ul > li > ul');
+      // 1st level links that have a 2nd level dropdown (many)
+      let navullis = document.querySelectorAll('nav > ul > li a:not(:only-child)');
+      
+      // Toggle 2nd level visibility
+      let toggle2nd = function(e) {
+        // Make 2nd level visible
+        let thisul = this.parentNode.querySelector('ul');
+        thisul.classList.toggle('active');
+        // Hide other dropdowns
+        for (let item of navulliuls) {
+          if (item !== thisul) {
+            item.classList.remove('active');
+          }
+        }
+        // Do not execute this link or hidenav
+        e.stopPropagation();
+      }
+      
+      // Toggle mobile navigation bar
+      let togglenav = function(e) {
+        // Hamburger to X toggle
+        navham.classList.toggle('active');
+        // 1st level visible toggle
+        navul.classList.toggle('active');
+        // Do not execute hidenav
+        e.stopPropagation();
+      }
+      
+      // Hide mobile navigation bar
+      let hidenav = function(e) {
+        // Hamburger
+        navham.classList.remove('active');
+        // 1st level visible toggle
+        navul.classList.remove('active');
+        e.stopPropagation();
+        // Hide 2nd level
+        for (let item of navulliuls) {
+          item.classList.remove('active');
+        }
+      }
+      
+      // Toggle 2nd level visibility on click on any link that has a 2nd level dropdown
+      for (let item of navullis) {
+        item.addEventListener("click", toggle2nd, false);
+      }
+      
+      // Hamburger or X click
+      navham.addEventListener("click", togglenav, false);
+      
+      // Clicking away from dropdown will remove the dropdown class
+      document.documentElement.addEventListener("click", hidenav, false);
+    }, false);</script>
+      <!-- <div class="nav">
+        <div class="dropdown">
+          <button class="dropbtn">Xidmətlərimiz</button>
+          <div class="dropdown-content">
+            <a href="#">Veb Dizayn</a>
+            <a href="#">İnternet şəbəkələrinin quraşdırılması</a>
+          </div>
+        </div>
+        <a href="#contact">Əlaqə</a> 
+        <a href="#partner">Tərəfdaşlarımız</a>
+        <a href="#staff">Əməkdaşlarımız</a>
+        <a href="#about">Haqqımızda</a>
+        <div class="nav-mobile">
+          <a id="nav-ham" href="#!"><span id="ss"></span></a>        
+        </div>
+      </div> -->
+<div class="container-typewriter">
+  <img id="office" src="assets/office.jpg">
+  <div class="typewriter">
+  <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">AirTech - Internetin tək ünvanı.</h1>
+  </div>
+</div>
+    <div id="about">
+    <h1  id="about-header">Haqqımızda</h1>
+    <div class="row" >
+    <img class="column"  src="assets/office.jpg">
+    <h3 class="column">AIR-Tech şirkəti Sizə ən optimal qiymətlərlə
+      yüksək sürətli internet xidmətlərini təklif etməkdədir. ADSL, VDSL kimi
+      texnologiyaları geridə buraxaraq yalnız biznes yönümlü müştərilərlə
+      fəaliyyət göstərdiyimiz üçün yüksək bilikli mühəndis heyətimiz ilə
+      keyfiyyətli xidmətlərimiz qarantımızdır. Sizə özəl hazırladığımız qiymət
+      cədvəlimizlə xidmətlər hissəsində tanış ola bilərsiniz:</h3>
+    </div>
+    </div>
+    <h1 id="staff">Əməkdaşlarımız</h1>
+    <!-- <div class="container">
+      <img id="staff1"src="assets/staff1.jpg">
+      <img id="staff2"src="assets/staff1.jpg">
+      <img id="staff3"src="assets/staff1.jpg">
+      <img id="staff4"src="assets/staff1.jpg">
+    </div> -->
+    <div class="container">
+      <section class="card">
+        <img src="assets/staff1.jpg" alt="sample image">
+        <div class="texts">
+          <h2>Example 1</h2>
+          <p>Lorem Ipsum dolor sit amet </p>
+        </div>
+      </section>
+      <section class="card">
+        <img src="assets/staff1.jpg" alt="sample image">
+        <div class="texts">
+          <h2>Example 2</h2>
+          <p>Lorem Ipsum dolor sit amet. </p>
+        </div>
+      </section>
+      <section class="card">
+        <img src="assets/staff1.jpg" alt="sample image">
+        <div class="texts">
+               <h2>Example 3</h2>
+               <p>Lorem Ipsum dolor sit amet. </p>
+              </div>
+            </section>
+      <section class="card">
+        <img src="assets/staff1.jpg" alt="sample image">
+        <div class="texts">
+          <h2>Example 4</h2>
+          <p>Lorem Ipsum dolor sit amet. </p>
+        </div>
+      </section>
+    </div>
+    <h1 id="partner">Tərəfdaşlarımız</h1>
+    <!-- <img id="google"src="assets/icons8-google.svg">
+    <img id="tiktok"src="assets/icons8-tiktok.svg">
+    <img id="facebook"src="assets/icons8-facebook.svg">
+    <img id="instagram"src="assets/icons8-instagram.svg"> -->
+    <div class="container">
+      <section class="card">
+         <img src="assets/icons8-google.svg" alt="sample image">
+          <div class="texts">
+               <h2>Google</h2>
+         </div>
+      </section>
+      <section class="card">
+         <img src="assets/icons8-tiktok.svg" alt="sample image">
+          <div class="texts">
+               <h2>Tiktok</h2>
+         </div>
+      </section>
+      <section class="card">
+         <img src="assets/icons8-facebook.svg" alt="sample image">
+          <div class="texts">
+               <h2>Facebook</h2>
+         </div>
+      </section>
+      <section class="card">
+         <img src="assets/icons8-instagram.svg" alt="sample image">
+          <div class="texts">
+               <h2>Instagram</h2>
+         </div>
+      </section>
+    </div>
+    
+    <ul id="contact" class="contact">
+      <li style="text-align: left;">
+        <p><i class="fa fa-map-marker fa-3x"></i></p>
+        <p><strong>AirTech MMC</strong></br>B.Niftaliyev 21, Baku</p>
+      </li>
+      <li style="text-align: left;">
+        <p><i class="fa fa-phone fa-3x"></i></p>
+        <p><strong>Telefon</strong></br><a href="tel:+994505695080">+994 (50) 569 50 80</a></p>
+      </li>
+      <li style="text-align: left;">
+        <p><i class="fa fa-envelope fa-3x"></i></p>
+        <p><strong>E-poçt</strong></br><a href="mailto:sales@air-tech.az">sales@air-tech.az</a></p>
+      </li>
+    </ul>
+
+  </body>
+</html>
